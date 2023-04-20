@@ -5,6 +5,7 @@
   <arg name="node_start_delay" default="4.0"/>
   <arg name="gui" default="false"/>
   <arg name="fast_mode" default="false"/>
+  <arg name="comparison" default="1.0"/>
 
   <!-- Stage simulator and robot robot description -->
 
@@ -16,17 +17,40 @@
   </group>
 
   <group if="$(eval 'comparison'==arg('map_name'))">
+    <group if="$(eval 'one'==arg('comparison'))">
+      <include file="$(find stage_ros)/launch/stage_pr2_comparison.launch">
+        <arg name="fast_mode" value="$(arg fast_mode)"/>
+        <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
+      </include>
+      <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
+        <arg name="map_name" value="$(arg map_name)"/>
+        <arg name="localize" value="$(arg localize)"/>
+        <arg name="init_x" default="2.0"/>
+        <arg name="init_y" default="2.0"/>
+      </include>
+    </group>
+
+    <group if="$(eval 'two'==arg('comparison'))">
     <include file="$(find stage_ros)/launch/stage_pr2_comparison.launch">
       <arg name="fast_mode" value="$(arg fast_mode)"/>
       <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
     </include>
+    <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
+      <arg name="map_name" value="$(arg map_name)"/>
+      <arg name="localize" value="$(arg localize)"/>
+      <arg name="init_x" default="5.0"/>
+      <arg name="init_y" default="5.0"/>
+    </include>
+    </group>
   </group>
 
-  <!-- static map and localization -->
+  <!-- static map and localization
   <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
     <arg name="map_name" value="$(arg map_name)"/>
     <arg name="localize" value="$(arg localize)"/>
-  </include>
+    <arg name="init_x" default="$(arg init_x)"/>
+    <arg name="init_y" default="$(arg init_y)"/>
+  </include> -->
 
   <!-- navigation -->
   <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_nav.launch">

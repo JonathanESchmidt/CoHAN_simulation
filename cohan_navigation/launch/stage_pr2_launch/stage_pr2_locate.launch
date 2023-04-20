@@ -1,7 +1,9 @@
 <launch>
-  <!-- start map_server with laas_adream map -->
+  <!-- start map_server with maze map -->
   <arg name="map_name" default="maze"/>
   <arg name="localize" default="fake"/>
+  <arg name="init_x" default="2.0"/>
+  <arg name="init_y" default="2.0"/>
 
   <!-- start map_server with laas_adream map -->
   <node name="map_server" pkg="map_server" type="map_server" args="$(find cohan_navigation)/maps/maze.yaml" if="$(eval 'maze'==arg('map_name'))"/>
@@ -11,8 +13,8 @@
     <param name="odom_frame_id" value="odom" />
     <param name="global_frame_id" value="/map" />
     <param name="base_frame_id" value="base_link" />
-    <param name="delta_x" value="0.0" />
-    <param name="delta_y" value="0.0" />
+    <param name="delta_x" value="$(arg init_x)" />
+    <param name="delta_y" value="$(arg init_y)" />
     <param name="delta_yaw" value="0.0" />
   </node>
 
@@ -24,8 +26,8 @@
   <!-- start acml for localization -->
   <group if="$(eval 'amcl'==arg('localize'))">
     <include file="$(find cohan_navigation)/config/stage_pr2_move_base_config/amcl_node.xml"/>
-    <param name="/amcl/initial_pose_x" value="2.0" />
-    <param name="/amcl/initial_pose_y" value="2.0" />
+    <param name="/amcl/initial_pose_x" value="$(arg init_x)" />
+    <param name="/amcl/initial_pose_y" value="$(arg init_y)" />
     <param name="/amcl/initial_pose_a" value="0.0" />
   </group>
 
