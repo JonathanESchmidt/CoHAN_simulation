@@ -1,7 +1,9 @@
 
-# CoHAN Navigation
+# CoHAN Simulation
 
 This package provides the configuration files and examples for the [CoHAN Planner](https://github.com/sphanit/CoHAN_Planner).
+
+This simulation contains the needed files to run simulation of scenarios used in the [master thesis of Tristan Schwörer and Jonathan Eichild Schmidt](https://github.com/Tristan9497/master-thesis).
 
 It uses slightly modified versions of [stage_ros](https://github.com/ros-simulation/stage_ros) simulator for simulating the robot and the humans. The modified version of ```stage_ros``` is already included.
 
