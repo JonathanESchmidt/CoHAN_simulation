@@ -1,27 +1,14 @@
 <launch>
   <!-- start map_server with maze map -->
   <arg name="map_name" default="maze"/>
-  <arg name="localize" default="fake"/>
+  <arg name="localize" default="amcl"/>
   <arg name="init_x" default="2.0"/>
   <arg name="init_y" default="2.0"/>
 
-  <!-- start map_server with laas_adream map -->
+  <!-- start map_server with maze map -->
   <node name="map_server" pkg="map_server" type="map_server" args="$(find cohan_navigation)/maps/maze.yaml" if="$(eval 'maze'==arg('map_name'))"/>
   <node name="map_server" pkg="map_server" type="map_server" args="$(find cohan_navigation)/maps/comparison.yaml" if="$(eval 'comparison'==arg('map_name'))"/>
   
-  <node pkg="fake_localization" type="fake_localization" name="fake_localization" respawn="true" output="screen" if="$(eval 'fake'==arg('localize'))">
-    <param name="odom_frame_id" value="odom" />
-    <param name="global_frame_id" value="/map" />
-    <param name="base_frame_id" value="base_link" />
-    <param name="delta_x" value="$(arg init_x)" />
-    <param name="delta_y" value="$(arg init_y)" />
-    <param name="delta_yaw" value="0.0" />
-  </node>
-
-  <!-- ***************************************************************************************************************** -->
-  <!-- Can be used in place of fake localization -->
-  <!-- <node pkg="tf" type="static_transform_publisher" name="odom_transform" args="0 0 0 0 0 0 /map /odom 20"/> -->
-  <!-- ***************************************************************************************************************** -->
 
   <!-- start acml for localization -->
   <group if="$(eval 'amcl'==arg('localize'))">

@@ -1,6 +1,5 @@
 <launch>
   <arg name="map_name" default="maze"/>
-  <arg name="localize" default="fake"/>
   <arg name="num_humans" default="2"/>
   <arg name="node_start_delay" default="4.0"/>
   <arg name="gui" default="false"/>
@@ -14,6 +13,11 @@
       <arg name="fast_mode" value="$(arg fast_mode)"/>
       <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
     </include>
+    <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
+        <arg name="map_name" value="$(arg map_name)"/>
+        <arg name="init_x" default="2.0"/>
+        <arg name="init_y" default="2.0"/>
+      </include>
   </group>
 
   <group if="$(eval 'comparison'==arg('map_name'))">
@@ -24,7 +28,6 @@
       </include>
       <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
         <arg name="map_name" value="$(arg map_name)"/>
-        <arg name="localize" value="$(arg localize)"/>
         <arg name="init_x" default="2.0"/>
         <arg name="init_y" default="2.0"/>
       </include>
@@ -37,7 +40,6 @@
     </include>
     <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
       <arg name="map_name" value="$(arg map_name)"/>
-      <arg name="localize" value="$(arg localize)"/>
       <arg name="init_x" default="5.0"/>
       <arg name="init_y" default="5.0"/>
     </include>
