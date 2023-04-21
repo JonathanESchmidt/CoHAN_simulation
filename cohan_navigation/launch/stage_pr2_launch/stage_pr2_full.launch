@@ -1,6 +1,6 @@
 <launch>
   <arg name="map_name" default="maze"/>
-  <arg name="num_humans" default="2"/>
+  <!--arg name="num_humans" default="2"/-->
   <arg name="node_start_delay" default="4.0"/>
   <arg name="gui" default="false"/>
   <arg name="fast_mode" default="false"/>
@@ -22,6 +22,7 @@
 
   <group if="$(eval 'comparison'==arg('map_name'))">
     <group if="$(eval 'one.one'==arg('comparison'))">
+      <arg name="num_humans" default="2">
       <include file="$(find stage_ros)/launch/stage_pr2_comparison1_1.launch">
         <arg name="fast_mode" value="$(arg fast_mode)"/>
         <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
@@ -34,18 +35,20 @@
     </group>
 
     <group if="$(eval 'one.two'==arg('comparison'))">
-    <include file="$(find stage_ros)/launch/stage_pr2_comparison1_2.launch">
-      <arg name="fast_mode" value="$(arg fast_mode)"/>
-      <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
-    </include>
-    <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
-      <arg name="map_name" value="$(arg map_name)"/>
-      <arg name="init_x" default="36.0"/>
-      <arg name="init_y" default="10.0"/>
-    </include>
+      <arg name="num_humans" default="2">
+      <include file="$(find stage_ros)/launch/stage_pr2_comparison1_2.launch">
+        <arg name="fast_mode" value="$(arg fast_mode)"/>
+        <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
+      </include>
+      <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
+        <arg name="map_name" value="$(arg map_name)"/>
+        <arg name="init_x" default="36.0"/>
+        <arg name="init_y" default="10.0"/>
+      </include>
     </group>
 
     <group if="$(eval 'two.one'==arg('comparison'))">
+      <arg name="num_humans" default="2">
       <include file="$(find stage_ros)/launch/stage_pr2_comparison2_1.launch">
         <arg name="fast_mode" value="$(arg fast_mode)"/>
         <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
@@ -58,18 +61,20 @@
     </group>
 
     <group if="$(eval 'two.two'==arg('comparison'))">
-    <include file="$(find stage_ros)/launch/stage_pr2_comparison2_2.launch">
-      <arg name="fast_mode" value="$(arg fast_mode)"/>
-      <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
-    </include>
-    <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
-      <arg name="map_name" value="$(arg map_name)"/>
-      <arg name="init_x" default="36.0"/>
-      <arg name="init_y" default="10.0"/>
-    </include>
+      <arg name="num_humans" default="2">
+      <include file="$(find stage_ros)/launch/stage_pr2_comparison2_2.launch">
+        <arg name="fast_mode" value="$(arg fast_mode)"/>
+        <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
+      </include>
+      <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
+        <arg name="map_name" value="$(arg map_name)"/>
+        <arg name="init_x" default="36.0"/>
+        <arg name="init_y" default="10.0"/>
+      </include>
     </group>
 
     <group if="$(eval 'three.one'==arg('comparison'))">
+      <arg name="num_humans" default="2">
       <include file="$(find stage_ros)/launch/stage_pr2_comparison3_1.launch">
         <arg name="fast_mode" value="$(arg fast_mode)"/>
         <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
@@ -82,15 +87,42 @@
     </group>
 
     <group if="$(eval 'three.two'==arg('comparison'))">
-    <include file="$(find stage_ros)/launch/stage_pr2_comparison3_2.launch">
-      <arg name="fast_mode" value="$(arg fast_mode)"/>
-      <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
-    </include>
-    <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
-      <arg name="map_name" value="$(arg map_name)"/>
-      <arg name="init_x" default="36.0"/>
-      <arg name="init_y" default="10.0"/>
-    </include>
+      <arg name="num_humans" default="2">
+      <include file="$(find stage_ros)/launch/stage_pr2_comparison3_2.launch">
+        <arg name="fast_mode" value="$(arg fast_mode)"/>
+        <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
+      </include>
+      <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
+        <arg name="map_name" value="$(arg map_name)"/>
+        <arg name="init_x" default="36.0"/>
+        <arg name="init_y" default="10.0"/>
+      </include>
+    </group>
+
+    <group if="$(eval 'four.one'==arg('comparison'))">
+      <arg name="num_humans" default="4">
+      <include file="$(find stage_ros)/launch/stage_pr2_comparison4_1.launch">
+        <arg name="fast_mode" value="$(arg fast_mode)"/>
+        <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
+      </include>
+      <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
+        <arg name="map_name" value="$(arg map_name)"/>
+        <arg name="init_x" default="30.0"/>
+        <arg name="init_y" default="2.0"/>
+      </include>
+    </group>
+
+    <group if="$(eval 'four.two'==arg('comparison'))">
+      <arg name="num_humans" default="4">
+      <include file="$(find stage_ros)/launch/stage_pr2_comparison4_2.launch">
+        <arg name="fast_mode" value="$(arg fast_mode)"/>
+        <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
+      </include>
+      <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
+        <arg name="map_name" value="$(arg map_name)"/>
+        <arg name="init_x" default="36.0"/>
+        <arg name="init_y" default="10.0"/>
+      </include>
     </group>
   </group>
 
