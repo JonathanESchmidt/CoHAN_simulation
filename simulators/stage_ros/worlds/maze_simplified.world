@@ -84,8 +84,8 @@ floorplan
 (
   name "laas"
   bitmap "maps/maze.pgm"
-  size [45 90 2.0 ]
-  pose [22.571 45.049 0.000 0.000]
+  size [39.25 32.65 2.0 ]
+  pose [19.625 16.325 0.000 0.000]
 )
 
 # throw in a robot
