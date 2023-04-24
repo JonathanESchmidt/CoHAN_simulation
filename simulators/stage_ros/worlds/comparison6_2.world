@@ -33,7 +33,7 @@ define torso_bottom model
     )
 )
 
-define torso_top modelcomparison6_1 copy
+define torso_top model
 (
   size [0.6 0.6 0.1]
   gui_nose 1
