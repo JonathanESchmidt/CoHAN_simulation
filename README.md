@@ -18,7 +18,6 @@ It uses slightly modified versions of [stage_ros](https://github.com/ros-simulat
 	```
 	(install any other depencies if needed)
 	
-2. Install MORSE seperately before running its examples.
 # Running the examples (Stage)
 1. PR2 with two humans and stage GUI
 	```
