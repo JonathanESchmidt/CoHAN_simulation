@@ -18,15 +18,14 @@ It uses slightly modified versions of [stage_ros](https://github.com/ros-simulat
 	```
 	(install any other depencies if needed)
 	
-2. Install MORSE seperately before running its examples.
 # Running the examples (Stage)
 1. PR2 with two humans and stage GUI
 	```
-	roslaunch cohan_navigation stage_pr2_full.launch gui:=true map_name:=comparison
+	roslaunch cohan_navigation stage_pr2_full.launch gui:=true map_name:=comparison comparison:=one.one num_humans:=2
 	```
 2. Running stage in fast mode
 	```
-	roslaunch cohan_navigation stage_pr2_full.launch fast_mode:=true map_name:=comparison
+	roslaunch cohan_navigation stage_pr2_full.launch fast_mode:=true map_name:=comparison comparison:=one.one num_humans:=2
 	```
 
 # Possible Error
