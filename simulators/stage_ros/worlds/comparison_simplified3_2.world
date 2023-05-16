@@ -90,6 +90,6 @@ floorplan
 
 # throw in a robot (always the robot first)
 pr2( pose [ 6.0 10.0 0 0 ] name "pr2" color "gray")
-human( pose [ 6.25 5.5 0 0 ] name "human1" color "blue")
-human( pose [ 7.20 5.52 0 110 ] name "human2" color "blue")
-human( pose [ 7.20 7.48 0 250 ] name "human3" color "blue")
+human( pose [ 6.45 6.5 0 0 ] name "human1" color "blue")
+human( pose [ 7.6 5.5 0 110 ] name "human2" color "blue")
+human( pose [ 7.6 7.5 0 250 ] name "human3" color "blue")

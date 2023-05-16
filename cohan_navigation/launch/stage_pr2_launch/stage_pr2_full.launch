@@ -28,7 +28,7 @@
       </include>
       <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
         <arg name="map_name" value="$(arg map_name)"/>
-        <arg name="init_x" default="30.0"/>
+        <arg name="init_x" default="6.0"/>
         <arg name="init_y" default="2.0"/>
       </include>
     </group>
@@ -40,7 +40,7 @@
       </include>
       <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
         <arg name="map_name" value="$(arg map_name)"/>
-        <arg name="init_x" default="36.0"/>
+        <arg name="init_x" default="6.0"/>
         <arg name="init_y" default="10.0"/>
       </include>
     </group>
@@ -52,7 +52,7 @@
       </include>
       <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
         <arg name="map_name" value="$(arg map_name)"/>
-        <arg name="init_x" default="30.0"/>
+        <arg name="init_x" default="6.0"/>
         <arg name="init_y" default="2.0"/>
       </include>
     </group>
@@ -64,7 +64,7 @@
       </include>
       <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
         <arg name="map_name" value="$(arg map_name)"/>
-        <arg name="init_x" default="36.0"/>
+        <arg name="init_x" default="6.0"/>
         <arg name="init_y" default="10.0"/>
       </include>
     </group>
@@ -76,7 +76,7 @@
       </include>
       <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
         <arg name="map_name" value="$(arg map_name)"/>
-        <arg name="init_x" default="30.0"/>
+        <arg name="init_x" default="6.0"/>
         <arg name="init_y" default="2.0"/>
       </include>
     </group>
@@ -88,7 +88,7 @@
       </include>
       <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
         <arg name="map_name" value="$(arg map_name)"/>
-        <arg name="init_x" default="36.0"/>
+        <arg name="init_x" default="6.0"/>
         <arg name="init_y" default="10.0"/>
       </include>
     </group>
@@ -100,7 +100,7 @@
       </include>
       <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
         <arg name="map_name" value="$(arg map_name)"/>
-        <arg name="init_x" default="30.0"/>
+        <arg name="init_x" default="6.0"/>
         <arg name="init_y" default="2.0"/>
       </include>
     </group>
@@ -112,7 +112,7 @@
       </include>
       <include file="$(find cohan_navigation)/launch/stage_pr2_launch/stage_pr2_locate.launch">
         <arg name="map_name" value="$(arg map_name)"/>
-        <arg name="init_x" default="36.0"/>
+        <arg name="init_x" default="6.0"/>
         <arg name="init_y" default="10.0"/>
       </include>
     </group>
