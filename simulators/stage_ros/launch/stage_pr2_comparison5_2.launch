@@ -5,8 +5,8 @@
   <arg name="mode" value="-f" if="$(arg fast_mode)"/>
   <arg name="graphics" default="-g" unless="$(arg gui)"/>
   <arg name="graphics" value="" if="$(arg gui)"/>
-  <arg name="world_file" default="$(find stage_ros)/worlds/comparison_simplified5_1.world" unless="$(arg gui)"/>
-  <arg name="world_file" value="$(find stage_ros)/worlds/comparison5_1.world" if="$(arg gui)"/>
+  <arg name="world_file" default="$(find stage_ros)/worlds/comparison_simplified5_2.world" unless="$(arg gui)"/>
+  <arg name="world_file" value="$(find stage_ros)/worlds/comparison5_2.world" if="$(arg gui)"/>
 
   <master auto="start"/>
   <param name="/use_sim_time" value="true"/>
